@@ -31,6 +31,26 @@ comments:
 atom_feed:
   path                   : # blank (default) uses feed.xml
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      related: false
+  - scope:
+      type: posts
+    values:
+      permalink: /:year/:month/:day/:title/
+      read_time: true
+      comments: true
+  - scope:
+      type: pages
+    values:
+      read_time: false
+      comments: false
+
 # SEO Related
 google_site_verification :
 bing_site_verification   :
