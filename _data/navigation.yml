@@ -1,10 +1,8 @@
 # main links links
 main:
-  - title: "Blog"
-    url: /
-  - title: "EqualsVerifier"
-    url: /equalsverifier
   - title: "Archive"
     url: /archive
   - title: "About"
     url: /about
+  - title: "EqualsVerifier"
+    url: /equalsverifier
