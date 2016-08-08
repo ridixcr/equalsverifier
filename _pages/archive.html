@@ -1,0 +1,18 @@
+---
+layout: archive
+permalink: /archive/
+title: "Archive"
+---
+
+{% include base_path %}
+
+{% assign currentYear = 0 %}
+{% for post in site.posts %}
+  {% assign newYear = post.date | date: '%Y' %}
+  {% if currentYear != newYear %}
+    {% assign currentYear = newYear %}
+    <h2>{{ currentYear }}</h2>
+  {% endif %}
+  {% include archive-single.html %}
+{% endfor %}
+

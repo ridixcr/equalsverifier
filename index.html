@@ -9,6 +9,11 @@ author_profile: true
 
 {% for post in paginator.posts %}
   {% include archive-single.html %}
+  {% if post.excerpt %}
+    <p class="archive__item-excerpt" itemprop="description">
+      {{ post.excerpt | markdownify | truncate: 500 }}<a href="{{ post.url }}" style="color:red;">More</a>
+    </p>
+  {% endif %}
 {% endfor %}
 
 {% include paginator.html %}
