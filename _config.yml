@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Site Title"
+title                    : "tr ouwens"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Jan Ouwens"
+description              : "By the way: things I want to say"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -81,10 +81,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : "bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  name             : "Jan Ouwens"
+  avatar           : "https://www.gravatar.com/avatar/f2e0574e5b5e770b5c5678b91ba889a6"
+  bio              : "<a href='/about'>Scala by day, Java by night</a><br>&mdash; I make <a href='/equalsverifier'>EqualsVerifier</a>"
+  location         : "The Netherlands"
   email            :
   uri              :
   bitbucket        :
