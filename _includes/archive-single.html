@@ -25,16 +25,23 @@
           alt="">
       </div>
     {% endif %}
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
+    <div style="float: left; width: 30%;">
+      <p class="archive__item-excerpt" itemprop="description"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time></p>
+    </div>
+    <div style="margin-left: 30%;">
+      <h2 class="archive__item-title" itemprop="headline">
+        <a href="{{ site.base_path }}{{ post.url }}" rel="permalink">
+          {% if post.id %}{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}{% else %}{{ post.title }}{% endif %}{% if post.link %}<i class="fa fa-star" aria-hidden="true"></i>{% endif %}
+        </a>
+      </h2>
+      <p class="page__meta">
+        {% if post.read_time %}
+          <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}
+          &nbsp;&nbsp;
+        {% endif %}
+        <i class="fa fa-tags" aria-hidden="true"></i> {{ post.tags | join: ', ' }}
+      </p>
+    </div>
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
