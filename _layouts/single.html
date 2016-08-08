@@ -50,9 +50,9 @@ layout: default
             </div>
             <div class="page__column-right">
               {% if page.modified %}
-                <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%d %B %Y" }}</time>
+                <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%-d %B %Y" }}</time>
               {% elsif page.date %}
-                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
               {% endif %}
             </div>
           </p>

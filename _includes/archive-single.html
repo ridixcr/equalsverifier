@@ -26,7 +26,7 @@
       </div>
     {% endif %}
     <div style="float: left; width: 30%;">
-      <p class="archive__item-excerpt" itemprop="description"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time></p>
+      <p class="archive__item-excerpt" itemprop="description"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time></p>
     </div>
     <div style="margin-left: 30%;">
       <h2 class="archive__item-title" itemprop="headline">
