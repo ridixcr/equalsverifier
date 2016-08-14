@@ -1,0 +1,30 @@
+---
+title: Error messages explained
+blog: equalsverifier
+layout: equalsverifier
+---
+<h2>Introduction</h2>
+<p> Did EqualsVerifier give an error message that you didn't understand? I do what I can, but unfortunately Java stacktraces leave little room for explanation sometimes. This page should help make sense of some of EqualsVerifier's error messages.</p>
+
+<p>Since EqualsVerifier relies on your classes' `toString` method when generating error messages, overriding `toString` helps with getting better error messages from EqualsVerifier. I recommend including the name of the class, and a summary of all the fields relevant to the equals contract. For example:</p>
+
+<pre class="prettyprint">
+@Override public String toString() {
+    return getClass().getSimpleName() + ": x=" + x + ", y=" + y;
+}
+// "Point: x=1, y=2"
+</pre>
+
+<p>This is not a complete list. I'll add to it as needed, so if you need help with an error message, please file an issue in the Issue tracker or let me know on the discussion group, and I'll add an explanation as soon as possible.</p>
+
+<h2>The error messages</h2>
+<div id="blog-archives">
+  {% for cat in equalsverifier.categories %}
+    {% for post in cat.posts %}
+      <div>
+        <span class="bull">&bull;</span>&nbsp;
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>
