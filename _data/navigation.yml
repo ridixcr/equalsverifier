@@ -6,3 +6,13 @@ main:
     url: /about
   - title: "EqualsVerifier"
     url: /equalsverifier
+
+equalsverifier:
+  - title: "Blog"
+    url: /
+  - title: "EqualsVerifier"
+    url: /equalsverifier
+  - title: "Need help?"
+    url: /equalsverifier/help
+  - title: "Error messages explained"
+    url: /equalsverifier/errormessages
