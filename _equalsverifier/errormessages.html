@@ -1,6 +1,5 @@
 ---
 title: Error messages explained
-blog: equalsverifier
 layout: equalsverifier
 ---
 <h2>Introduction</h2>
@@ -8,12 +7,12 @@ layout: equalsverifier
 
 <p>Since EqualsVerifier relies on your classes' `toString` method when generating error messages, overriding `toString` helps with getting better error messages from EqualsVerifier. I recommend including the name of the class, and a summary of all the fields relevant to the equals contract. For example:</p>
 
-<pre class="prettyprint">
+{% highlight java %}
 @Override public String toString() {
     return getClass().getSimpleName() + ": x=" + x + ", y=" + y;
 }
 // "Point: x=1, y=2"
-</pre>
+{% endhighlight %}
 
 <p>This is not a complete list. I'll add to it as needed, so if you need help with an error message, please file an issue in the Issue tracker or let me know on the discussion group, and I'll add an explanation as soon as possible.</p>
 

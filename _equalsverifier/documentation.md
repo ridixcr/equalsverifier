@@ -10,30 +10,30 @@ Usage
 -----
 Use, within unit test method, as follows:
 
-* Create an instance of EqualsVerifier. Call {@link #forClass(Class)} to supply a reference to the class that contains the {@code equals} method to test. Also, {@link #forRelaxedEqualExamples(Object, Object, Object...)} can be used if the class under test has relaxed equality rules, for example, if the contents of two fields of the same type can be interchanged without breaking equality.
+* Create an instance of EqualsVerifier. Call `#forClass(Class)` to supply a reference to the class that contains the `equals` method to test. Also, `#forRelaxedEqualExamples(Object, Object, Object...)` can be used if the class under test has relaxed equality rules, for example, if the contents of two fields of the same type can be interchanged without breaking equality.
 * If the class under test is designed for inheritance, and the `equals` and `hashCode` methods can be overridden, an instance of the class is not permitted to be equal to an instance of a subclass, even though all the relevant fields are equal. Call `#withRedefinedSubclass(Class)` to supply a reference to such a subclass, or call `suppress(Warning)` with `Warning.STRICT_INHERITANCE` to disable the check.
-* Call `suppress(Warning)` to suppress warnings given by EqualsVerifier.
+* Call `#suppress(Warning)` to suppress warnings given by EqualsVerifier.
 * Call `#verify()` to perform the actual verifications.
 
 Example use:
 
-<pre class="prettyprint">
+{% highlight java %}
 @Test
 public void equalsContract() {
     EqualsVerifier.forClass(My.class).verify();
 }
-</pre>
+{% endhighlight %}
 
 Or, with some warnings suppressed:
 
-<pre class="prettyprint">
+{% highlight java %}
 @Test
 public void equalsContract() {
     EqualsVerifier.forClass(My.class)
             .suppress(Warning.NONFINAL_FIELDS, Warning.NULL_FIELDS)
             .verify();
 }
-</pre>
+{% endhighlight %}
 
 When EqualsVerifier detects a problem, it will explain what it thinks is wrong. In some cases (mostly when it needs more information), it will say what to do to fix the problem.
 

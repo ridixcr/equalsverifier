@@ -1,6 +1,5 @@
 ---
 title: Changelog
-blog: equalsverifier
 layout: equalsverifier
 ---
 * What's new in [version 1.x](#1.x)?
