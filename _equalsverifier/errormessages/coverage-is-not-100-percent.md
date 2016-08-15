@@ -4,7 +4,7 @@ layout: equalsverifier
 ---
 EqualsVerifier should get 100% code coverage on your `equals` and `hashCode` methods. However, it can happen that it doesn't achieve this. Below is a list of cases where it's impossible to get 100% coverage, and their solutions.
 
-If you have an example of a class where EqualsVerifier doesn't give you 100% coverage, and it's not in the list below, please [let me know]({{ pcurl("equalsverifier/help") }}).
+If you have an example of a class where EqualsVerifier doesn't give you 100% coverage, and it's not in the list below, please [let me know](/equalsverifier/help).
 
 Using canEqual
 ---
@@ -12,16 +12,16 @@ If you have a hierarchy of classes that each redefine `equals` and `hashCode` as
 
 Say that you have a hierarchy of `Point` classes, where `Point` has fields `x` and `y`, and its subclass `ColorPoint` adds a field `color`. `ColorPoint`'s `canEqual` method looks like this:
 
-<pre class="prettyprint">
+{% highlight java %}
 @Override
 public boolean canEqual(Object obj) {
     return obj instanceof ColorPoint;
 }
-</pre>
+{% endhighlight %}
 
 And its `equals` method looks like this:
 
-<pre class="prettyprint">
+{% highlight java %}
 @Override
 public boolean equals(Object obj) {
     if (!(obj instanceof ColorPoint)) {
@@ -33,7 +33,7 @@ public boolean equals(Object obj) {
     }
     return super.equals(other) && color.equals(other.color);
 }
-</pre>
+{% endhighlight %}
 
 Now, the `return false;` statement after the call to `other.canEqual(this)` will get no coverage. This makes sense, because it can only be reached if `other.canEqual(this)` returns false, which it will never do. Because of the `instanceof` check in `equals`, `canEqual` will always be called on a (subclass of) `ColorPoint`. But `ColorPoint` is a leaf node, so there are no subclasses. `other` will always be _exactly_ of type `ColorPoint`, and `other.canEqual(this)` will always return true.
 
@@ -42,7 +42,7 @@ There are two ways to work around this, and still get 100% coverage:
 * Simply remove the `canEqual` check in the leaf nodes. I don't recommend this, because it's risky if you later decide to add subclasses to `ColorPoint`; then it will no longer be a leaf node in the tree. If you forget to put back the call to `canEqual`, you may run into problems.
 * Invent a subclass specifically for your test. It's verbose, and `ColorPoint` can no longer be marked `final`, but it's safe and correct. Your test will now look like this:
 
-<pre class="prettyprint">
+{% highlight java %}
 @Test
 public void leafNodeEquals() {
     class EndPoint extends ColorPoint {
@@ -61,7 +61,7 @@ public void leafNodeEquals() {
             .withRedefinedSubclass(EndPoint.class) // Don't forget to add this line
             .verify();
 }
-</pre>
+{% endhighlight %}
 
 Note that this issue is not specific to EqualsVerifier; with hand-written `equals` test code you would run into exactly the same problem.
 
@@ -70,7 +70,7 @@ Non-standard equality code
 ---
 Another way that EqualsVerifier won't reach 100% code coverage, is with non-standard equality code. For example, given a `Point` class with fields `x` and `y`:
 
-<pre class="prettyprint">
+{% highlight java %}
 @Override
 public boolean equals(Object obj) {
     if (!(obj instanceof Point)) {
@@ -82,7 +82,7 @@ public boolean equals(Object obj) {
     Point other = (Point)obj;
     return x == other.x && y == other.y;
 }
-</pre>
+{% endhighlight %}
 
 EqualsVerifier will never execute the second `if` statement's block, simply because it doesn't test for all possible values. It can't it would take far too long. (For our `Point` class, assuming that `x` and `y` are `int`, it would take more than 2<sup>32</sup>*2<sup>32</sup> comparisons.)
 

@@ -10,16 +10,16 @@ If you get this error message, then you probably have a transitive dependency pr
 
 To fix this, make sure you have cglib 2.2. If you use Maven, add the following lines to your pom:
 
-<pre class="prettyprint">
-&lt;dependencyManagement>
-	&lt;dependencies>
-		&lt;dependency>
-			&lt;groupId>cglib&lt;/groupId>
-			&lt;artifactId>cglib-nodep&lt;/artifactId>
-			&lt;version>2.2&lt;/version>
-		&lt;/dependency>
-	&lt;/dependencies>
-&lt;/dependencyManagement>
-</pre>
+{% highlight xml %}
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib-nodep</artifactId>
+      <version>2.2</version>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+{% endhighlight %}
 
 Also, make sure that you use cglib-nodep, instead of 'vanilla' cglib!

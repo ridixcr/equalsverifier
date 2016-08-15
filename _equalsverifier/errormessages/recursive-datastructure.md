@@ -16,11 +16,11 @@ EqualsVerifier will recursively try to instantiate objects of every class it enc
 
 Example:
 
-<pre class="prettyprint">
+{% highlight java %}
 EqualsVerifier.forClass(MyClass.class)
     .withPrefabValues(Foo.class, new Foo(1), new Foo(2))
     .verify();
-</pre>
+{% endhighlight %}
 
 If `com.example.Foo` is a interface or an abstract class, it's fine to use instances from any implementation of `com.example.Foo`.
 
