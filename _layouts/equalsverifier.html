@@ -43,20 +43,6 @@ layout: equalsverifier-default
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
         {% include page__taxonomy.html %}
-        {% if page.modified or page.date %}
-          <p class="page__date">
-            <div class="page__column-left">
-              <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label }}</strong>
-            </div>
-            <div class="page__column-right">
-              {% if page.modified %}
-                <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%-d %B %Y" }}</time>
-              {% elsif page.date %}
-                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
-              {% endif %}
-            </div>
-          </p>
-        {% endif %}
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
