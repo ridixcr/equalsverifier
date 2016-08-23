@@ -1,6 +1,5 @@
 ---
 title: "Non-nullity: equals/hashCode/toString throws NullPointerExcpetion"
-layout: equalsverifier
 ---
 This error occurs when the class under test can throw a `NullPointerException` when one of its fields is null and `equals`/`hashCode`/`toString` is called. For example, `equals` could contain this line:
 {% highlight java %}

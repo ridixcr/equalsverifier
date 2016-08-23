@@ -1,18 +1,8 @@
 # main links links
 main:
-  - title: "Archive"
-    url: /archive
-  - title: "About"
-    url: /about
-  - title: "EqualsVerifier"
-    url: /equalsverifier
-
-equalsverifier:
-  - title: "Blog"
-    url: /
-  - title: "EqualsVerifier"
-    url: /equalsverifier
   - title: "Need help?"
-    url: /equalsverifier/help
+    url: /help
   - title: "Error messages explained"
-    url: /equalsverifier/errormessages
+    url: /errormessages
+  - title: "Blog"
+    url: http://www.jqno.nl

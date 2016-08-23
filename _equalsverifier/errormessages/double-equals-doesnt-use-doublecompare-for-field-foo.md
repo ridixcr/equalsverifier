@@ -1,6 +1,5 @@
 ---
 title: "Double: equals doesn't use Double.compare for field foo"
-layout: equalsverifier
 ---
 You should never use `==` to compare doubles or floats in an `equals` method. Always use `Double.compare` or [`Double.compareTo`](http://download.oracle.com/javase/6/docs/api/java/lang/Double.html#compareTo%28java.lang.Double%29) instead.
 

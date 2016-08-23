@@ -1,6 +1,5 @@
 ---
 title: "NoClassDefFoundError"
-layout: equalsverifier
 ---
     java.lang.AssertionError: java.lang.NoClassDefFoundError: net/sf/cglib/asm/FieldVisitor
 

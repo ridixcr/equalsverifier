@@ -1,6 +1,5 @@
 ---
 title: "Subclass: ... equals subclass instance ..."
-layout: equalsverifier
 ---
 You have called `withRedefinedSubclass`, but EqualsVerifier has found an instance of the superclass and an instance of the subclass that are equal to each other. However, `withRedefinedSubclass` is meant for situations where the subclass adds state to it parent, and checks that in its `equals` method. In such cases, no instance of the subclass may be equal to any instance of its parent; otherwise your `equals` method will lose either symmetry or transitivity, whithout which it no longer follows the `equals` contract. For more details on this, please read [this article](http://www.artima.com/lejava/articles/equality.html) by Odersky, Spoon and Venners.
 

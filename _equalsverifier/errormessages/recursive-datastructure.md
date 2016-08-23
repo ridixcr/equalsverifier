@@ -1,6 +1,5 @@
 ---
 title: "Recursive datastructure"
-layout: equalsverifier
 ---
     Recursive datastructure.
     Add prefab values for one of the following types: com.example.Foo.

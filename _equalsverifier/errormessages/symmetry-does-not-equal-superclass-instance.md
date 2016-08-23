@@ -1,6 +1,5 @@
 ---
 title: "Symmetry: ... does not equal superclass instance ..."
-layout: equalsverifier
 ---
 Short explanation
 -----------------

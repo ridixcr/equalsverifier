@@ -1,6 +1,5 @@
 ---
 title: "Significant fields: equals relies on foo, but hashCode does not"
-layout: equalsverifier
 ---
 The cause for this message is usually the obvious one.
 

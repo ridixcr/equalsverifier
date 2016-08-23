@@ -1,6 +1,5 @@
 ---
 title: "Subclass: object is not equal to an instance of a trivial subclass with equal fields"
-layout: equalsverifier
 ---
     Subclass: object is not equal to an instance of a trivial subclass with equal fields: ...
     Consider making the class final.

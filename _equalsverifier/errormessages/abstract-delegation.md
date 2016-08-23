@@ -1,6 +1,5 @@
 ---
 title: Abstract delegation
-layout: equalsverifier
 ---
     Abstract delegation: MyClass's equals method delegates to an abstract method
     Abstract delegation: MyClass's hashCode method delegates to an abstract method

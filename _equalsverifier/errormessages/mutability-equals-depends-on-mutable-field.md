@@ -1,6 +1,5 @@
 ---
 title: "Mutability: equals depends on mutable field"
-layout: equalsverifier
 ---
 Your `equals` method references a field that is not final. This means that if the value of this field changes, the same object may not be equal to itself at two different points in time. This can be a problem if you use this object as a key in a map, or if you put it in a `HashSet` or other hash-based collection: the collection might not be able to find your object again.
 

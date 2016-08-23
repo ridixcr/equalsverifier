@@ -1,6 +1,5 @@
 ---
 title: "Redefined superclass: object should not equal superclass instance"
-layout: equalsverifier
 ---
 This happens when `.withRedefinedSuperclass()` is called, but calling `superclass.equals(classUnderTest)` or `classUnderTest.equals(superclass)` is true. If the superclass and the class under test both override `equals`, and an instance of one is allowed to be equal to an instance of the other, there is no way to satisfy both the symmetry and transitivity requirements of the equals contract.
 

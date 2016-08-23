@@ -7,12 +7,12 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "tr ouwens"
+title                    : "EqualsVerifier"
 title_separator          : "-"
 name                     : "Jan Ouwens"
-description              : "By the way: things I want to say"
+description              : "EqualsVerifier"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
+baseurl                  : /equalsverifier
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
@@ -34,7 +34,7 @@ atom_feed:
 collections:
   equalsverifier:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:path/
 
 defaults:
   - scope:
@@ -59,7 +59,6 @@ defaults:
       path: ""
       type: equalsverifier
     values:
-      layout: equalsverifier
       read_time: false
       comments: false
 

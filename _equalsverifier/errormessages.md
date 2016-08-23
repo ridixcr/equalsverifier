@@ -1,6 +1,5 @@
 ---
 title: Error messages explained
-layout: equalsverifier
 ---
 ## Introduction
 

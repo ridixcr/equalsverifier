@@ -1,7 +1,5 @@
 ---
 title: Documentation
-blog: equalsverifier
-layout: equalsverifier
 ---
 EqualsVerifier is a Java tool that can be used in unit tests. It verifies whether the contract for the `equals` and `hashCode` methods is met. The contracts are described in the Javadoc comments for the `java.lang.Object` class.
 

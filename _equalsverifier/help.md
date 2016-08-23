@@ -1,7 +1,5 @@
 ---
 title: Need help?
-blog: equalsverifier
-layout: equalsverifier
 ---
 You can...
 

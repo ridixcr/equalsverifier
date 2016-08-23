@@ -1,7 +1,6 @@
 ---
 title: EqualsVerifier
-layout: equalsverifier
-permalink: /equalsverifier/
+permalink: /
 ---
 Quick start
 -----------

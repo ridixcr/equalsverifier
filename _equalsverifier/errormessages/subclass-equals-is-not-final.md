@@ -1,6 +1,5 @@
 ---
 title: "Subclass: equals is not final"
-layout: equalsverifier
 ---
     Subclass: equals is not final.
     Supply an instance of a redefined subclass using withRedefinedSubclass if equals cannot be final.

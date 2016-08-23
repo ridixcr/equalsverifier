@@ -1,6 +1,5 @@
 ---
 title: "Coverage is not 100%"
-layout: equalsverifier
 ---
 EqualsVerifier should get 100% code coverage on your `equals` and `hashCode` methods. However, it can happen that it doesn't achieve this. Below is a list of cases where it's impossible to get 100% coverage, and their solutions.
 

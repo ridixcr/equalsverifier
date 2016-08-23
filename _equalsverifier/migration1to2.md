@@ -1,7 +1,5 @@
 ---
 title: Migration guide 1 to 2
-blog: equalsverifier
-layout: equalsverifier
 ---
 Migration guide 1 to 2
 ---
