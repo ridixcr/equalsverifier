@@ -92,19 +92,19 @@ analytics:
 
 # Site Author
 author:
-  name             : "Jan Ouwens"
-  avatar           : "https://www.gravatar.com/avatar/f2e0574e5b5e770b5c5678b91ba889a6"
-  bio              : "<a href='/about'>Scala by day, Java by night</a><br>&mdash; I make <a href='/equalsverifier'>EqualsVerifier</a>"
-  location         : "The Netherlands"
-  email            :
-  uri              :
+  name             :
+  avatar           :
+  bio              : "EqualsVerifier can be used in Java unit tests to verify whether the contract for the equals and hashCode methods is met."
+  location         :
+  email            : https://groups.google.com/forum/?fromgroups#!forum/equalsverifier
+  uri              : http://www.jqno.nl/about
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           : jqno
+  github           : jqno/equalsverifier
   google_plus      :
   keybase          :
   instagram        :
@@ -112,7 +112,7 @@ author:
   linkedin         :
   pinterest        :
   soundcloud       :
-  stackoverflow    : 127863
+  stackoverflow    : equalsverifier
   steam            :
   tumblr           :
   twitter          : jqno
