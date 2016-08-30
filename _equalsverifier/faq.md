@@ -10,10 +10,9 @@ title: FAQ
 * [Error messages](#errormessages)
     * [Can you explain the error message I just got?](#explainerrormessages)
     * [I'm testing java.lang.String, but it fails](#testingString)
-    * [Why do other tests sometimes fail if I use #forExamples?](#forExamples)
+    * [Why did you remove `#forExamples`?](#forExamples)
 * [Build](#build)
     * [How do I build EqualsVerifier?](#howtobuild)
-    * [Why can't Eclipse resolve the dependencies?](#eclipseresolvedeps)
     * [I get generics errors while building](#genericserrors)
 
 
@@ -96,10 +95,12 @@ Please don't test `java.lang.String`, because indeed it fails. Please see the se
 
 <a id="forExamples"></a>
 
-### Why do other tests sometimes fail if I use `#forExamples`?
-As part of the verification process, EqualsVerifier will assign values to all fields of the class under test, including static fields (except static final fields). These values are unpredictable, may break your class invariants, and may even be invalid under normal conditions.
+### Why did you remove `#forExamples`?
+At first, the main raison-d'être for `#forExamples` was that I wasn't sure I could make `#forClass` work for under all circumstances. By EqualsVerifier 1.0, I was convinced that I could, but by then a lot of people were already using it.
 
-If you use `EqualsVerifier.forExamples`, and you re-use the instances of the class under test, this may impact other tests that also use these instances and expect them to have different values. Instead, use dedicated instances for the EqualsVerifier test.
+Later, I (and users) started noticing it could cause some hard-to-debug problems, so version 2.0 seemed like a good moment to clean up the API and remove it. 
+
+The issues that `#forExamples` caused, mainly had to do with static values. As part of the verification process, EqualsVerifier will assign values to all fields of the class under test, including static fields (but not static final fields). These values are unpredictable, may break your class invariants, and may even be invalid under normal conditions. If you used `EqualsVerifier.forExamples`, and you re-used the instances of the class under test, this could impact other tests that also used these instances and expected them to have different values.
 
 
 <a id="build"></a>
@@ -109,12 +110,7 @@ Build
 <a id="howtobuild"></a>
 
 ### How do I build EqualsVerifier?
-First, check out the code. You can open the project in Eclipse, or you can run ANT directly. Note that Java 6 is required to compile the project, although the ANT script will generate Java 5 compatible JAR files.
-
-<a id="eclipseresolvedeps"></a>
-
-### Why can't Eclipse resolve the dependencies?
-Until version 1.5, EqualsVerifier used [Apache Ivy](http://ant.apache.org/ivy/) to resolve all dependencies. If you want these older versions of EqualsVerifier to compile in Eclipse, you need to install the [IvyDE](http://ant.apache.org/ivy/ivyde/) plugin, which will take care of the dependencies for you.
+First, check out the code. You can open the project in Eclipse or IntelliJ, or you can run Maven from the command-line. Note that Java 7 or higher is required to compile the project.
 
 <a id="genericserrors"></a>
 
