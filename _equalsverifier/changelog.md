@@ -8,6 +8,12 @@ title: Changelog
 
 <a name="2.x"></a>
 
+Version 2.1.6
+-------------
+_October 1, 2016_
+
+* ...no longer get NullPointerExceptions in situations where annotations which are available at compile time, are not available at runtime. ([Issue 153](https://github.com/jqno/equalsverifier/issues/153) and [Issue 154](https://github.com/jqno/equalsverifier/issues/154))
+
 Version 2.1.5
 -------------
 _August 6, 2016_
