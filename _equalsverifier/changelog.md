@@ -8,6 +8,10 @@ title: Changelog
 
 <a name="2.x"></a>
 
+Version 2.1.7
+-------------
+* ...use single value enums again ([Issue 157](https://github.com/jqno/equalsverifier/pull/157); thanks Stephan!)
+
 Version 2.1.6
 -------------
 _October 1, 2016_
