@@ -8,6 +8,10 @@ title: Changelog
 
 <a name="2.x"></a>
 
+Version 2.1.8
+-------------
+* ...test classes that implement an abstract class that calls an abstract method in its `equals` or `hashCode` methods, when EqualsVerifier is called with `usingGetClass`. ([Issue 161](https://github.com/jqno/equalsverifier/issues/161))
+
 Version 2.1.7
 -------------
 * ...use single value enums again ([Issue 157](https://github.com/jqno/equalsverifier/pull/157); thanks Stephan!)
